@@ -107,6 +107,17 @@ PARSER.add_argument("-elmo_gamma", type=float, default=0.1)
 
 # Fat-RGCN
 PARSER.add_argument("fat-rgcn_dir", type=str)
+PARSER.add_argument("--graph-batch-size", type=int, default=10000)
+PARSER.add_argument("--graph-split-size", type=float, default=0.6)
+parser.add_argument("--negative-sample", type=int, default=1)
+parser.add_argument("--n-epochs", type=int, default=5000)
+parser.add_argument("--evaluate-every", type=int, default=300)
+parser.add_argument("--dropout", type=float, default=0.15)
+parser.add_argument("--gpu", type=int, default=0)
+parser.add_argument("--lr", type=float, default=5e-4)
+parser.add_argument("--n-bases", type=int, default=4)
+parser.add_argument("--regularization", type=float, default=3e-2)
+parser.add_argument("--grad-norm", type=float, default=1)
 
 args = PARSER.parse_args()
 print(args)
